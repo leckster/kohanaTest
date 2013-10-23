@@ -2,13 +2,12 @@
 
 defined('SYSPATH') or die('No direct script access.');
 
-class Model_Article extends ORM
+class Model_Comment extends ORM
 {
 
-	//contains many relations
-	protected $_has_many = array(
-		'comments' => array(
-			'model' => 'comment',
+	protected $_belongs_to = array(
+		'article' => array(
+			'model' => 'article',
 			'foreign_key' => 'article_id'
 		)
 	);
@@ -21,15 +20,19 @@ class Model_Article extends ORM
 	public function rules()
 	{
 		return array(
-			'title' => array(
+			'name' => array(
 				array('not_empty')
 			),
-			'content' => array(
+			'comment' => array(
 				array('not_empty'),
 				array(
 					'min_length',
 					array(':value', 10)
 				)
+			),
+			'email' => array(
+				array('not_empty'),
+				array('email')
 			)
 		);
 	}

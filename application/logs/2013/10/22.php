@@ -52,3 +52,41 @@
 2013-10-22 22:25:01 --- CRITICAL: ErrorException [ 1 ]: Call to undefined method Request::redirect() ~ APPPATH\classes\Controller\article.php [ 40 ] in file:line
 2013-10-22 22:25:01 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
 #1 {main} in file:line
+2013-10-22 23:17:34 --- CRITICAL: View_Exception [ 0 ]: The requested view template could not be found ~ SYSPATH\classes\Kohana\View.php [ 257 ] in C:\dev\www\kohanaTest\system\classes\Kohana\View.php:137
+2013-10-22 23:17:34 --- DEBUG: #0 C:\dev\www\kohanaTest\system\classes\Kohana\View.php(137): Kohana_View->set_filename('template')
+#1 C:\dev\www\kohanaTest\system\classes\Kohana\View.php(30): Kohana_View->__construct('template', NULL)
+#2 C:\dev\www\kohanaTest\system\classes\Kohana\Controller\Template.php(33): Kohana_View::factory('template')
+#3 C:\dev\www\kohanaTest\system\classes\Kohana\Controller.php(69): Kohana_Controller_Template->before()
+#4 [internal function]: Kohana_Controller->execute()
+#5 C:\dev\www\kohanaTest\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Article))
+#6 C:\dev\www\kohanaTest\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 C:\dev\www\kohanaTest\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#8 C:\dev\www\kohanaTest\index.php(118): Kohana_Request->execute()
+#9 {main} in C:\dev\www\kohanaTest\system\classes\Kohana\View.php:137
+2013-10-22 23:35:24 --- CRITICAL: Database_Exception [ 1364 ]: Field 'time' doesn't have a default value [ INSERT INTO `comments` (`article_id`, `comment`, `name`, `email`) VALUES ('2', 'oadjoifajdo \nadj\nadjfasdjf\n\njia\njs\npsd\njfasdjf\naidfsdf', 'Leckie', 'leckie@leckie.com') ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in C:\dev\www\kohanaTest\modules\database\classes\Kohana\Database\Query.php:251
+2013-10-22 23:35:24 --- DEBUG: #0 C:\dev\www\kohanaTest\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(2, 'INSERT INTO `co...', false, Array)
+#1 C:\dev\www\kohanaTest\modules\orm\classes\Kohana\ORM.php(1324): Kohana_Database_Query->execute(Object(Database_MySQL))
+#2 C:\dev\www\kohanaTest\modules\orm\classes\Kohana\ORM.php(1421): Kohana_ORM->create(NULL)
+#3 C:\dev\www\kohanaTest\application\classes\Controller\comment.php(12): Kohana_ORM->save()
+#4 C:\dev\www\kohanaTest\system\classes\Kohana\Controller.php(84): Controller_Comment->action_post()
+#5 [internal function]: Kohana_Controller->execute()
+#6 C:\dev\www\kohanaTest\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Comment))
+#7 C:\dev\www\kohanaTest\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 C:\dev\www\kohanaTest\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#9 C:\dev\www\kohanaTest\index.php(118): Kohana_Request->execute()
+#10 {main} in C:\dev\www\kohanaTest\modules\database\classes\Kohana\Database\Query.php:251
+2013-10-22 23:36:50 --- CRITICAL: Database_Exception [ 1406 ]: Data too long for column 'comment' at row 1 [ INSERT INTO `comments` (`article_id`, `comment`, `name`, `email`) VALUES ('2', 'oadjoifajdo \nadj\nadjfasdjf\n\njia\njs\npsd\njfasdjf\naidfsdf', 'Leckie', 'leckie@leckie.com') ] ~ MODPATH\database\classes\Kohana\Database\MySQL.php [ 194 ] in C:\dev\www\kohanaTest\modules\database\classes\Kohana\Database\Query.php:251
+2013-10-22 23:36:50 --- DEBUG: #0 C:\dev\www\kohanaTest\modules\database\classes\Kohana\Database\Query.php(251): Kohana_Database_MySQL->query(2, 'INSERT INTO `co...', false, Array)
+#1 C:\dev\www\kohanaTest\modules\orm\classes\Kohana\ORM.php(1324): Kohana_Database_Query->execute(Object(Database_MySQL))
+#2 C:\dev\www\kohanaTest\modules\orm\classes\Kohana\ORM.php(1421): Kohana_ORM->create(NULL)
+#3 C:\dev\www\kohanaTest\application\classes\Controller\comment.php(12): Kohana_ORM->save()
+#4 C:\dev\www\kohanaTest\system\classes\Kohana\Controller.php(84): Controller_Comment->action_post()
+#5 [internal function]: Kohana_Controller->execute()
+#6 C:\dev\www\kohanaTest\system\classes\Kohana\Request\Client\Internal.php(97): ReflectionMethod->invoke(Object(Controller_Comment))
+#7 C:\dev\www\kohanaTest\system\classes\Kohana\Request\Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#8 C:\dev\www\kohanaTest\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#9 C:\dev\www\kohanaTest\index.php(118): Kohana_Request->execute()
+#10 {main} in C:\dev\www\kohanaTest\modules\database\classes\Kohana\Database\Query.php:251
+2013-10-22 23:37:33 --- CRITICAL: ErrorException [ 1 ]: Call to undefined method Request::redirect() ~ APPPATH\classes\Controller\comment.php [ 14 ] in file:line
+2013-10-22 23:37:33 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
